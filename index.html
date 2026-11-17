@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#100d18"><title>Tower of Hanoi | Logic Programming Project</title>
+<link rel="stylesheet" href="/css/style.css"><script src="/js/game.js" defer></script></head>
+<body><div class="page-shell">
+<header class="project-header"><div class="eyebrow">LOGIC PROGRAMMING PROJECT</div><h1>Tower of Hanoi</h1>
+<p class="byline">by <strong>Dominic L. Regis</strong> <span>·</span> BSIT - 3A</p><div class="header-rule"></div></header>
+<main class="game-card"><div class="topbar"><div><p class="section-kicker">THE CLASSIC PUZZLE</p><h2>Move every disk to the final peg</h2>
+<p class="subheading">A little logic, a little patience, and a golden finish.</p></div>
+<div class="disk-control"><label for="disk-count">Disks</label><select id="disk-count">
+<option>3</option><option selected>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select></div></div>
+<section class="stats"><div class="stat"><span class="stat-label">TIME</span><strong id="timer">00:00</strong></div>
+<div class="stat"><span class="stat-label">MOVES</span><strong id="move-count">0</strong></div><div class="stat"><span class="stat-label">INVALID</span><strong id="invalid-count">0</strong></div>
+<div class="stat"><span class="stat-label">OPTIMAL</span><strong id="optimal-count">15</strong></div></section>
+<div class="game-toolbar"><div class="toolbar-actions"><button class="btn btn-gold" id="new-game">New Game</button><button class="btn btn-purple" id="auto-solve">Auto-Solve</button></div>
+<div class="speed-control"><label for="speed">Animation speed <strong id="speed-value">5x</strong></label><input id="speed" type="range" min="1" max="10" value="5"></div></div>
+<div class="board-frame"><div class="board-topline"><span>GAME BOARD</span><span>SELECT A DISK, THEN A DESTINATION PEG</span></div>
+<div class="board" id="board"><div class="peg-column" data-peg="0"><div class="peg-label">PEG <b>A</b></div><div class="peg-stage"><div class="peg-rod"></div><div class="disks-area"><div class="disks-stack" id="stack-0"></div></div></div><div class="peg-base"></div></div>
+<div class="peg-column" data-peg="1"><div class="peg-label">PEG <b>B</b></div><div class="peg-stage"><div class="peg-rod"></div><div class="disks-area"><div class="disks-stack" id="stack-1"></div></div></div><div class="peg-base"></div></div>
+<div class="peg-column" data-peg="2"><div class="peg-label">PEG <b>C</b></div><div class="peg-stage"><div class="peg-rod"></div><div class="disks-area"><div class="disks-stack" id="stack-2"></div></div></div><div class="peg-base"></div></div></div>
+<p class="board-hint" id="board-hint">Choose the top disk on any peg to begin.</p></div>
+<div class="bottom-row"><div class="rules"><span class="rules-icon">✦</span><p><strong>Rules of the puzzle</strong><br>Move one disk at a time. Only move the top disk. Never place a larger disk on a smaller one.</p></div>
+<div class="server-status" id="server-status"><span class="status-dot"></span><span id="status-text">Connecting to Prolog server…</span></div></div></main>
+<footer>POWERED BY <span>SWI-PROLOG</span> <i>·</i> BUILT WITH LOGIC &amp; CODE</footer></div>
+<div class="modal-backdrop" id="victory-modal" hidden><section class="victory-modal" role="dialog" aria-modal="true" aria-labelledby="victory-title">
+<div class="trophy">✦</div><p class="section-kicker">PUZZLE COMPLETED</p><h2 id="victory-title">A golden victory!</h2><p class="victory-copy">All disks have reached Peg C. Excellent work.</p>
+<div class="victory-stats"><div><span>TIME</span><strong id="final-time">00:00</strong></div><div><span>MOVES</span><strong id="final-moves">0</strong></div><div><span>OPTIMAL</span><strong id="final-optimal">0</strong></div></div>
+<button class="btn btn-gold btn-wide" id="play-again">Play Again</button></section></div></body></html>
